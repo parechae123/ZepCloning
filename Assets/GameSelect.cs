@@ -14,5 +14,4 @@ public class GameSelect : MonoBehaviour
     {
         gameObject.SetActive(!gameObject.activeSelf);
     }
-    
 }
