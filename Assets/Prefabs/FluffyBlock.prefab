@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2423605638846070330}
   - component: {fileID: 242669552909099781}
   m_Layer: 0
-  m_Name: FluppyBlock
+  m_Name: FluffyBlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

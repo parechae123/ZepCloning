@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Main.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Scenes/FloppyBird.unity
+    path: Assets/Scenes/FluffyBird.unity
     guid: c13e1306d6bc20148a184d27b1cbdd2a
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 3b95079b1ce9ed246b0b58a1292ff2de, type: 2}

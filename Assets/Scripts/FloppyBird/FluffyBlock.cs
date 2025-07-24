@@ -3,23 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FluppyBlock : MonoBehaviour
+public class FluffyBlock : MonoBehaviour
 {
     float curr = 0;
     float speed = 10;
     private void Start()
     {
-        FluppyManager.GetInstance.gameReset += Init;
+        FluffyManager.GetInstance.gameReset += Init;
     }
     // Update is called once per frame
     void Update()
     {
-        if (FluppyManager.GetInstance.isGameOver) return;
+        if (FluffyManager.GetInstance.isGameOver) return;
         transform.position += Vector3.left * (Time.deltaTime*speed* curr);
         curr += Time.deltaTime;
         if (transform.position.x <= -10)
         {
-            FluppyManager.GetInstance.Enqueue(this.gameObject);
+            FluffyManager.GetInstance.Enqueue(this.gameObject);
             curr = 0;
         }
     }

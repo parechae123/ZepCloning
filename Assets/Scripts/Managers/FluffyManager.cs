@@ -1,37 +1,48 @@
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Assets.Scripts.Managers
 {
-    class FluppyManager : SingleTon<FluppyManager>
+    class FluffyManager : SingleTon<FluffyManager>
     {
         private GameObject blockPrefab;
         public Queue<GameObject> blockPool;
         public Action gameReset;
         public Text scoreText;
         public Text startTimer;
+        public Text highScore;
         public GameObject gameOverPannel;
 
-        public BlockData[] blockDatas = new BlockData[4] 
+        public ScoreData highScoreData;
+        public ScoreData currScoreData;
+
+        public BlockData[] blockDatas = new BlockData[4]
         { new BlockData { pos = new Vector3(9.5f, -6.6f, 0f), ySize = 8f },
         new BlockData { pos = new Vector3(9.5f, -4.5f, 0f), ySize = 8f },
         new BlockData { pos = new Vector3(9.5f, -4f, 0f), ySize = 8f },
         new BlockData { pos = new Vector3(9.5f, 0.5f, 0f), ySize = 3f }};
         public bool isGameOver = true;
-        
+
         protected override void Init()
         {
-            ResourceManager.GetInstance.LoadAsync<GameObject>("FluppyBlock", (result) =>
+            ResourceManager.GetInstance.LoadAsync<GameObject>("FluffyBlock", (result) =>
             {
                 blockPrefab = GameObject.Instantiate(result);
-                
+
             }, true);
             blockPool = new Queue<GameObject>();
+            ScoreData sData = ResourceManager.GetInstance.LoadData<ScoreData>("HighScore");
+            currScoreData = new ScoreData() { score = 0f };
+            highScoreData = sData;
+            gameReset += () => { currScoreData.score = 0f; highScore.text = highScoreData.score.ToString("N2"); scoreText.text = "0.00"; };
         }
         public void Reset()
         {
@@ -60,10 +71,28 @@ namespace Assets.Scripts.Managers
             }
             return blockPool.Dequeue();
         }
+        public void CompareScore()
+        {
+            if (highScoreData.score < currScoreData.score)
+            {
+                ResourceManager.GetInstance.SaveData<ScoreData>(currScoreData, "HighScore",true);
+                highScoreData = new ScoreData() { score = currScoreData.score };
+            }
+        }
+        public void UpdateTextBoard()
+        {
+            currScoreData.score += Time.deltaTime;
+            scoreText.text = currScoreData.score.ToString("N2");
+        }
     }
     public struct BlockData
     {
         public Vector3 pos;
         public float ySize;
+    }
+    [System.Serializable]
+    public struct ScoreData
+    {
+        public float score;
     }
 }

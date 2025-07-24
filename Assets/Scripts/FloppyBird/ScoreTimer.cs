@@ -9,6 +9,6 @@ public class ScoreTimer : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        FluppyManager.GetInstance.scoreText = GetComponent<Text>();
+        FluffyManager.GetInstance.scoreText = GetComponent<Text>();
     }
 }

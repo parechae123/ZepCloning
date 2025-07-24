@@ -20,7 +20,6 @@ public class ZepCam : MonoBehaviour
         currPos.y = !boundCheck[1] && currPos.y > targetTr.position.y ? transform.position.y : currPos.y ;
         currPos.x = !boundCheck[2] && currPos.x < targetTr.position.x ? transform.position.x : currPos.x ;
         currPos.x = !boundCheck[3] && currPos.x > targetTr.position.x ? transform.position.x : currPos.x ;
-        
         currPos.x -= transform.position.x;
         currPos.y -= transform.position.y;
         transform.position += new Vector3(currPos.x, currPos.y,0);
