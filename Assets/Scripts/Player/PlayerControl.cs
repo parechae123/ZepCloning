@@ -44,7 +44,7 @@ public class PlayerControl : MonoBehaviour
             PlayAnimation(Vector2.zero);
         }
 
-        if (input.GetInteractKeyDown) stat.GetDamage(9);
+        if (input.GetInteractKeyDown) UIManager.GetInstance.interaction.Invoke();
     }
     public void PlayAnimation(Vector2 num)
     {

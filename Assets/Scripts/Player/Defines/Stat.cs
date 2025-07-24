@@ -22,7 +22,6 @@ namespace Assets.Scripts.Player.Defines
             {
                 currHP = 0;
             }
-            UnityEngine.Debug.Log($"데미지{damage},체력{currHP}");
         }
 
         public Stat(byte atk, byte currHP, byte maxHP, float moveSpeed)
