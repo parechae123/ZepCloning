@@ -9,17 +9,17 @@ public class BlockRespawner : MonoBehaviour
     float time=1.5f;
     void Start()
     {
-        FluffyManager.GetInstance.gameReset += Init;
+        FlappyManager.GetInstance.gameReset += Init;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (FluffyManager.GetInstance.isGameOver) return;
+        if (FlappyManager.GetInstance.isGameOver) return;
         curr += Time.deltaTime;
         if(time <= curr)
         {
-            FluffyManager.GetInstance.BlockDequeue();
+            FlappyManager.GetInstance.BlockDequeue();
             curr = 0f;
         }
     }

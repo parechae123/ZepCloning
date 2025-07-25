@@ -11,7 +11,7 @@ using UnityEngine.UI;
 
 namespace Assets.Scripts.Managers
 {
-    class FluffyManager : SingleTon<FluffyManager>
+    class FlappyManager : SingleTon<FlappyManager>
     {
         private GameObject blockPrefab;
         public Queue<GameObject> blockPool;
@@ -24,18 +24,14 @@ namespace Assets.Scripts.Managers
         public ScoreData highScoreData;
         public ScoreData currScoreData;
 
-        public BlockData[] blockDatas = new BlockData[4]
-        { new BlockData { pos = new Vector3(9.5f, -6.6f, 0f), ySize = 8f },
-        new BlockData { pos = new Vector3(9.5f, -4.5f, 0f), ySize = 8f },
-        new BlockData { pos = new Vector3(9.5f, -4f, 0f), ySize = 8f },
-        new BlockData { pos = new Vector3(9.5f, 0.5f, 0f), ySize = 3f }};
+        public readonly float blockSpawnPoint = 11f;
         public bool isGameOver = true;
 
         protected override void Init()
         {
-            ResourceManager.GetInstance.LoadAsync<GameObject>("FluffyBlock", (result) =>
+            ResourceManager.GetInstance.LoadAsync<GameObject>("FlaffyBlock", (result) =>
             {
-                blockPrefab = GameObject.Instantiate(result);
+                blockPrefab = result;
 
             }, true);
             blockPool = new Queue<GameObject>();
@@ -56,10 +52,10 @@ namespace Assets.Scripts.Managers
 
         public void BlockDequeue()
         {
-            int index = new System.Random().Next(0, blockDatas.Length);
+            //2.86~-4.52
+            float index = UnityEngine.Random.Range(-4.52f, 2.86f);
             GameObject obj = Dequeue();
-            obj.transform.position = blockDatas[index].pos;
-            obj.transform.localScale = new Vector3(1f, blockDatas[index].ySize, 1f);
+            obj.transform.position = new Vector3(blockSpawnPoint,index,0);
             obj.SetActive(true);
         }
 

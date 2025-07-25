@@ -3,11 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FluffyExplaneText : MonoBehaviour
+public class FlaffyExplaneText : MonoBehaviour
 {
     public void OnButtonClick()
     {
-        FluffyManager.GetInstance.gameReset.Invoke();
+
+        FlappyManager.GetInstance.gameReset.Invoke();
         gameObject.SetActive(false);
         
     }

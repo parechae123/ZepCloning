@@ -9,6 +9,6 @@ public class StartTimer : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        FluffyManager.GetInstance.startTimer = GetComponent<Text>();
+        FlappyManager.GetInstance.startTimer = GetComponent<Text>();
     }
 }

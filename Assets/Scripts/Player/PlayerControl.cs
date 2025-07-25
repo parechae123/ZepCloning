@@ -20,15 +20,16 @@ public class PlayerControl : MonoBehaviour
     private void Awake()
     {
         outLook.Init();
-        FluffyManager.GetInstance.Reset();
+        FlappyManager.GetInstance.Reset();
         moveHandler = new PlayerMoveHandler(GetComponent<Rigidbody2D>());
         input = new PlayerInput(KeyCode.W,KeyCode.S,KeyCode.A,KeyCode.D,KeyCode.Space);
         stat = new Stat(10, 10, 10, 3);
+        
     }
 
     private void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -46,7 +47,7 @@ public class PlayerControl : MonoBehaviour
             PlayAnimation(Vector2.zero);
         }
 
-        if (input.GetInteractKeyDown) UIManager.GetInstance.interaction.Invoke();
+        if (input.GetInteractKeyDown) UIManager.GetInstance.InteractionInvoke();
     }
     public void PlayAnimation(Vector2 num)
     {

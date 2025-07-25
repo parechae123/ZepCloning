@@ -77,7 +77,16 @@ public class ResourceManager : SingleTon<ResourceManager>//ALL : (250707)싱글�
         
         if (File.Exists(path))
         {
-            T result = JsonConvert.DeserializeObject<T>(File.ReadAllText(path));
+            T result;
+            try
+            {
+                result = JsonConvert.DeserializeObject<T>(File.ReadAllText(path));
+            }
+            catch
+            {
+                //파싱 실패시
+                result = default(T);
+            }
             return result;
         }
         else

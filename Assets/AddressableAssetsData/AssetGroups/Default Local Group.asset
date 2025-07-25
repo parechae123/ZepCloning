@@ -27,8 +27,18 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c00657e9fd1f8484b9cf1dff37c35d81
-    m_Address: FluffyBlock
+  - m_GUID: fb4d03b3346e62342889754077cf67e8
+    m_Address: FlaffyBlock
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e643f6725100a974fb9d8d96793991d4
+    m_Address: DialogData
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a8f298f48e0c87a4da6f93815bc98918
+    m_Address: berryYoungJong
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

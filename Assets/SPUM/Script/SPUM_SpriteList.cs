@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.ComponentModel;
+using System;
 
 public class SPUM_SpriteList : MonoBehaviour
 {
@@ -34,6 +35,8 @@ public class SPUM_SpriteList : MonoBehaviour
     {
         AvatarManager.GetInstance.hairChange += ChangeHair;
         AvatarManager.GetInstance.beardChange += ChangeBeard;
+        AvatarManager.GetInstance.charactorLoad += LoadHairs;
+        UIManager.GetInstance.hairSave += SaveHairs;
     }
 
     public void Reset()
@@ -180,5 +183,25 @@ public class SPUM_SpriteList : MonoBehaviour
     public void ChangeBeard(string sprite)
     {
         _hairList[3].sprite = AvatarManager.GetInstance.spriteAtlas.GetSprite(sprite);
+    }
+    public void SaveHairs()
+    {
+        CharactorSave hairInfo = new CharactorSave { hairName = _hairList[0].sprite.name, beardName = _hairList[3].sprite.name };
+        ResourceManager.GetInstance.SaveData(hairInfo, "CharactorData", true);
+    }
+    public void LoadHairs()
+    {
+        CharactorSave load= ResourceManager.GetInstance.LoadData<CharactorSave>("CharactorData");
+        if (load == null) return;
+        load.hairName = load.hairName.Replace("(Clone)", "");
+        load.beardName = load.beardName.Replace("(Clone)", "");
+        ChangeBeard(load.beardName);
+        ChangeHair(load.hairName);
+    }
+    [Serializable]
+    public class CharactorSave
+    {
+        public string hairName;
+        public string beardName;
     }
 }

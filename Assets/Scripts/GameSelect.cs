@@ -1,17 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class GameSelect : MonoBehaviour
+public class GameSelect : InteractionUi
 {
     // Start is called before the first frame update
-    void Start()
+    protected void Start()
     {
         UIManager.GetInstance.gameSelect = (RectTransform)transform;
         gameObject.SetActive(false);
     }
-    public void OnExitButton()
+    public override void OnExitButton()
     {
-        gameObject.SetActive(!gameObject.activeSelf);
+        base.OnExitButton();
+    }
+    public void OnSceneChageButton()
+    {
+        SceneManager.LoadScene(1);
     }
 }

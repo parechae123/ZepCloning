@@ -1,0 +1,44 @@
+{
+  "sheet": [
+    {
+      "charater": "영종",
+      "dialog": "히히 좋다 딸기",
+      "imageName": "berryYoungJong",
+      "typingtype": "Substring",
+      "typedelay": "0.05",
+      "typeStrength": "1",
+      "DialogID": "YoungJongDefault",
+      "DialogIndex": "0"
+    },
+    {
+      "charater": "Player",
+      "dialog": "음?..",
+      "imageName": "None",
+      "typingtype": "Substring",
+      "typedelay": "0.05",
+      "typeStrength": "1",
+      "DialogID": "YoungJongDefault",
+      "DialogIndex": "1"
+    },
+    {
+      "charater": "영종",
+      "dialog": "나는 딸기",
+      "imageName": "berryYoungJong",
+      "typingtype": "PopCharGrow",
+      "typedelay": "0.5",
+      "typeStrength": "3",
+      "DialogID": "YoungJongDefault",
+      "DialogIndex": "2"
+    },
+    {
+      "charater": "영종",
+      "dialog": "딸기딸기딸기",
+      "imageName": "berryYoungJong",
+      "typingtype": "PopCharGrow",
+      "typedelay": "0.5",
+      "typeStrength": "3",
+      "DialogID": "YoungJongDefault",
+      "DialogIndex": "3"
+    }
+  ]
+}
