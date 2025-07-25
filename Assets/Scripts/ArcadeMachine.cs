@@ -6,11 +6,13 @@ public class ArcadeMachine : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (!collision.CompareTag("Player")) return;
         UIManager.GetInstance.pressSpaceBar.gameObject.SetActive(true);
         UIManager.GetInstance.RegistInteraction(() => { UIManager.GetInstance.gameSelect.gameObject.SetActive(!UIManager.GetInstance.gameSelect.gameObject.activeSelf); });
     }
     private void OnTriggerExit2D(Collider2D other)
     {
+        if (!other.CompareTag("Player")) return;
         if (UIManager.GetInstance.pressSpaceBar == null) return;
         UIManager.GetInstance.pressSpaceBar.gameObject?.SetActive(false);
         UIManager.GetInstance.gameSelect.gameObject?.SetActive(false);

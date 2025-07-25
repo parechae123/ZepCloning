@@ -5,7 +5,7 @@
       "dialog": "히히 좋다 딸기",
       "imageName": "berryYoungJong",
       "typingtype": "Substring",
-      "typedelay": "0.05",
+      "typedelay": "0.1",
       "typeStrength": "1",
       "DialogID": "YoungJongDefault",
       "DialogIndex": "0"
@@ -15,7 +15,7 @@
       "dialog": "음?..",
       "imageName": "None",
       "typingtype": "Substring",
-      "typedelay": "0.05",
+      "typedelay": "0.5",
       "typeStrength": "1",
       "DialogID": "YoungJongDefault",
       "DialogIndex": "1"
@@ -25,7 +25,7 @@
       "dialog": "나는 딸기",
       "imageName": "berryYoungJong",
       "typingtype": "PopCharGrow",
-      "typedelay": "0.5",
+      "typedelay": "0.7",
       "typeStrength": "3",
       "DialogID": "YoungJongDefault",
       "DialogIndex": "2"
@@ -35,7 +35,7 @@
       "dialog": "딸기딸기딸기",
       "imageName": "berryYoungJong",
       "typingtype": "PopCharGrow",
-      "typedelay": "0.5",
+      "typedelay": "0.9",
       "typeStrength": "3",
       "DialogID": "YoungJongDefault",
       "DialogIndex": "3"
