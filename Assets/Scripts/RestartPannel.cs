@@ -9,13 +9,13 @@ public class RestartPannel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        FlappyManager.GetInstance.gameOverPannel = gameObject;
+        FlaffyManager.GetInstance.gameOverPannel = gameObject;
         gameObject.SetActive(false);
     }
 
     public void OnRestartBTN()
     {
-        FlappyManager.GetInstance.gameReset.Invoke();
+        FlaffyManager.GetInstance.gameReset.Invoke();
         gameObject.SetActive(false);
     }
     public void OnMainBTN()

@@ -9,8 +9,8 @@ public class HighScore : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        FlappyManager.GetInstance.highScore = transform.GetComponent<Text>();
-        FlappyManager.GetInstance.highScore.text = FlappyManager.GetInstance.highScoreData.score.ToString("N2");
+        FlaffyManager.GetInstance.highScore = transform.GetComponent<Text>();
+        FlaffyManager.GetInstance.highScore.text = FlaffyManager.GetInstance.highScoreData.score.ToString("N2");
         Destroy(this);
     }
 }

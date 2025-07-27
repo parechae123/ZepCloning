@@ -33,6 +33,11 @@ public class SPUM_SpriteList : MonoBehaviour
     
     public void Init()
     {
+        AvatarManager.GetInstance.hairChange = null;
+        AvatarManager.GetInstance.beardChange = null;
+        AvatarManager.GetInstance.charactorLoad = null;
+        UIManager.GetInstance.hairSave = null;
+
         AvatarManager.GetInstance.hairChange += ChangeHair;
         AvatarManager.GetInstance.beardChange += ChangeBeard;
         AvatarManager.GetInstance.charactorLoad += LoadHairs;

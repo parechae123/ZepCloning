@@ -7,11 +7,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Assets.Scripts.Managers
 {
-    class FlappyManager : SingleTon<FlappyManager>
+    class FlaffyManager : SingleTon<FlaffyManager>
     {
         private GameObject blockPrefab;
         public Queue<GameObject> blockPool;
@@ -38,11 +39,13 @@ namespace Assets.Scripts.Managers
             ScoreData sData = ResourceManager.GetInstance.LoadData<ScoreData>("HighScore");
             currScoreData = new ScoreData() { score = 0f };
             highScoreData = sData;
-            gameReset += () => { currScoreData.score = 0f; highScore.text = highScoreData.score.ToString("N2"); scoreText.text = "0.00"; };
         }
         public void Reset()
         {
             blockPool = new Queue<GameObject>();
+            gameReset = null;
+            gameReset += () => { currScoreData.score = 0f; highScore.text = highScoreData.score.ToString("N2"); scoreText.text = "0.00"; };
+
         }
         public void Enqueue(GameObject obj)
         {

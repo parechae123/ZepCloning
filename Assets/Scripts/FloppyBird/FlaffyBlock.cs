@@ -9,17 +9,17 @@ public class FlaffyBlock : MonoBehaviour
     float speed = 10;
     private void Start()
     {
-        FlappyManager.GetInstance.gameReset += Init;
+        FlaffyManager.GetInstance.gameReset += Init;
     }
     // Update is called once per frame
     void Update()
     {
-        if (FlappyManager.GetInstance.isGameOver) return;
+        if (FlaffyManager.GetInstance.isGameOver) return;
         transform.position += Vector3.left * (Time.deltaTime*speed* curr);
         curr += Time.deltaTime;
         if (transform.position.x <= -10)
         {
-            FlappyManager.GetInstance.Enqueue(this.gameObject);
+            FlaffyManager.GetInstance.Enqueue(this.gameObject);
             curr = 0;
         }
     }

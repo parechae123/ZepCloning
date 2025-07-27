@@ -13,7 +13,7 @@ public class NPC : MonoBehaviour
     }
     public void OnTriggerExit2D(Collider2D collision)
     {
-        if (UIManager.GetInstance.dialogWindow.gameObject == null) return;
+        if (collision.gameObject == null) return;
         if (!collision.CompareTag("Player")) return;
 
         UIManager.GetInstance.dialogWindow.gameObject.SetActive(false);

@@ -18,6 +18,7 @@ public class Dialog : MonoBehaviour
     Coroutine coroutine;
     private void Awake()
     {
+        UIManager.GetInstance.dialogSetting = null;
         UIManager.GetInstance.dialogSetting += SetDialog;
         UIManager.GetInstance.dialogWindow = (RectTransform)this.transform;
         gameObject.SetActive(false);

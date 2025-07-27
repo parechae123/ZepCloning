@@ -8,7 +8,7 @@ public class FlaffyExplaneText : MonoBehaviour
     public void OnButtonClick()
     {
 
-        FlappyManager.GetInstance.gameReset.Invoke();
+        FlaffyManager.GetInstance.gameReset.Invoke();
         gameObject.SetActive(false);
         
     }

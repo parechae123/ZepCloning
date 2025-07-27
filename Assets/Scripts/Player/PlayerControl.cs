@@ -20,7 +20,6 @@ public class PlayerControl : MonoBehaviour
     private void Awake()
     {
         outLook.Init();
-        FlappyManager.GetInstance.Reset();
         moveHandler = new PlayerMoveHandler(GetComponent<Rigidbody2D>());
         input = new PlayerInput(KeyCode.W,KeyCode.S,KeyCode.A,KeyCode.D,KeyCode.Space);
         stat = new Stat(10, 10, 10, 3);
