@@ -1,7 +1,7 @@
 {
   "sheet": [
     {
-      "charater": "영종",
+      "character": "영종",
       "dialog": "히히 좋다 딸기",
       "imageName": "berryYoungJong",
       "typingtype": "Substring",
@@ -11,7 +11,7 @@
       "DialogIndex": "0"
     },
     {
-      "charater": "Player",
+      "character": "Player",
       "dialog": "음?..",
       "imageName": "None",
       "typingtype": "Substring",
@@ -21,7 +21,7 @@
       "DialogIndex": "1"
     },
     {
-      "charater": "영종",
+      "character": "영종",
       "dialog": "나는 딸기",
       "imageName": "berryYoungJong",
       "typingtype": "PopCharGrow",
@@ -31,7 +31,7 @@
       "DialogIndex": "2"
     },
     {
-      "charater": "영종",
+      "character": "영종",
       "dialog": "딸기딸기딸기",
       "imageName": "berryYoungJong",
       "typingtype": "PopCharGrow",

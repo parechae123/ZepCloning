@@ -11,7 +11,7 @@ public class Dialog : MonoBehaviour
 {
     public Text mainText;
     public Text subText;
-    public Text charactorName;
+    public Text characterName;
     public Image charactorImage;
     [SerializeField]public DialogData dialogs;
     int currIndex;
@@ -56,7 +56,7 @@ public class Dialog : MonoBehaviour
 
         ResetCoroutine();
         coroutine = StartCoroutine(TextDirrecting(dialog.dialog, dialog.typedelay, index));
-        charactorName.text = dialog.character;
+        characterName.text = dialog.character;
 
         if (dialog.imageName != "None")
         {
@@ -99,8 +99,11 @@ public class Dialog : MonoBehaviour
                 float xPos = ((mainText.text.Length/2f) - (mainText.text.Count((x)=> x== ' ')*0.5f))  *mainText.fontSize +(subText.fontSize/2f);
                 subText.transform.position = new Vector3(pos.x+xPos,pos.y,pos.z);
                 subText.text = text;
-                subText.rectTransform.localScale = Vector3.one * dialogs.sheet[index].typeStrength; 
-                subText.rectTransform.DOScale(1, dialogs.sheet[index].typedelay).OnComplete((() => subText.text = ""));
+                subText.rectTransform.localScale = Vector3.one * dialogs.sheet[index].typeStrength;
+                Sequence dialogDirect = DOTween.Sequence();
+                dialogDirect.Append(subText.rectTransform.DOScale(1, dialogs.sheet[index].typedelay).OnComplete((() => subText.text = "")));
+                dialogDirect.SetEase(Ease.OutBounce);
+                
                 break;
             default:
                 break;
